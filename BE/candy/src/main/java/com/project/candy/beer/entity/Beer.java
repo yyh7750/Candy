@@ -9,7 +9,7 @@ import javax.persistence.*;
  * packageName    : com.project.candy.beer.entity
  * fileName       : Beer
  * date           : 2023-03-15
- * description    : Beer Entity Class.
+ * description    : Beer Entity Class
  */
 @Entity
 public class Beer extends BaseTimeEntity {
