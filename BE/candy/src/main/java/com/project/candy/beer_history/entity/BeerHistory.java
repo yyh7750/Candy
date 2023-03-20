@@ -2,12 +2,8 @@ package com.project.candy.beer_history.entity;
 
 import com.project.candy.beer.entity.Beer;
 import com.project.candy.user.entity.User;
-import com.project.candy.util.BaseEntity;
 import com.project.candy.util.BaseTimeEntity;
-import lombok.*;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 /**
  * packageName    : com.project.candy.beer_history.entity
@@ -17,10 +13,6 @@ import javax.validation.constraints.NotBlank;
  */
 @Entity
 @Table(name = "bear_history")
-@Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
-@Getter
 public class BeerHistory extends BaseTimeEntity {
 
     @EmbeddedId
@@ -31,19 +23,12 @@ public class BeerHistory extends BaseTimeEntity {
     @MapsId("userId")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    @NotBlank
-    private User user;
+    private User userId;
 
     @MapsId("beerId")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "beer_id")
-    @NotBlank
-    private Beer beer;
+    private Beer beerId;
 
-    @NotBlank
     private int count; // 맥주 마신 횟수
-
-    @Embedded
-    @NotBlank
-    private BaseEntity baseEntity;
 }

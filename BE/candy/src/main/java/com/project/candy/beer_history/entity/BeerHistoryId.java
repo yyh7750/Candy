@@ -1,6 +1,5 @@
 package com.project.candy.beer_history.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
@@ -13,10 +12,7 @@ import java.io.Serializable;
 @Embeddable
 public class BeerHistoryId implements Serializable {
 
-    @Column(name = "user_id")
     private long userId;
-
-    @Column(name = "beer_id")
     private long beerId;
 
     @Override

@@ -2,10 +2,11 @@ package com.project.candy.user.entity;
 
 import com.project.candy.util.BaseEntity;
 import com.project.candy.util.BaseTimeEntity;
-import lombok.*;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
 /**
@@ -15,39 +16,26 @@ import java.time.LocalDate;
  * description    :
  */
 @Entity
-@Table(name = "user")
-@Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
-@Getter
 public class User extends BaseTimeEntity {
 
     @Id
     @Column(name = "user_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank
     private String email;
 
-    @NotBlank
     private String nickname;
 
     @Column(length = 1)
-    @NotBlank
     private String gender;
 
-    @NotBlank
     private LocalDate birth;
 
     @Column(length = 511)
-    @NotBlank
     private String profileImage;
 
-    @NotBlank
     private Role role;
 
     @Embedded
-    @NotBlank
     private BaseEntity baseEntity;
 }
