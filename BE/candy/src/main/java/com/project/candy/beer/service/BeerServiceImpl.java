@@ -58,7 +58,7 @@ public class BeerServiceImpl implements BeerService {
     if (calendarList != null) {
       isDrink = true;
     }
-    Like like = likeRepository.findByUserAndBeer(user, beer).get();
+    Like like = likeRepository.readByUserAndBeerAndIsDeleteFalse(user.getId(), beer.getId());
     if (like != null) {
       isLike = true;
     }
