@@ -46,7 +46,7 @@ public class ReadReviewRecommendationResponse {
             .beerImageUrl(reviewCache.getBeerImageUrl())
             .profileImage(reviewCache.getProfileImage())
             .nickname(reviewCache.getNickName())
-            .overall(reviewCache.getOverall())
+            .overall(reviewCache.getOverall() / 4.0)
             .contents(reviewCache.getContents())
             .likeCount(reviewCache.getLikeCount())
             .isLike(reviewCache.isLike())
